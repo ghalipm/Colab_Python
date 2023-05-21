@@ -1,0 +1,19 @@
+# https://colab.research.google.com/github/alientometal/PythonTraining_Hexavarsity_05_2023/blob/main/Python_introduction_GColab.ipynb
+
+# count the number of words in a text
+text="Python is a high level programming language. Python is widely used for Data Science."
+
+def counting_words_of_text(text):
+  return len(text.split())
+
+counting_words_of_text(text)
+
+
+# find the frequency of words in a text
+text="Python is a high level programming language. Python is widely used for Data Science."
+word="Python"
+
+def frequency_of_words_in_text(word, text):
+  return text.split().count(word)
+
+frequency_of_words_in_text(word, text)

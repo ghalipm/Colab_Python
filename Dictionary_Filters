@@ -1,0 +1,34 @@
+# Student names and grades saved into a dictionary (hashmap in java -- dictionary in python  )
+students=[
+  {"name": "John", "grade": 70},
+ {"name": "Johnson",  "grade": 50}, 
+ {"name": "Matt", "grade": 90},
+ {"name": "Nick", "grade": 55}]
+
+def failing_student_filter(students):
+  for i in range(0,len(students)) :
+    if students[i]['grade']<60 :
+      return  students[i]
+
+def failing_student_filter_lambda(students):
+  failing_students=list(filter(lambda x: x['grade'] < 60, students))
+  #print("failing students : ", failing_students )
+  return failing_students
+
+passing_students=list(filter(lambda x: x['grade'] >=60, students))
+print("passing students : ", passing_students )
+
+starting_with_J=list(filter(lambda x: x['name'][0] == "J", students))
+print("Name starts with J : ", starting_with_J)
+
+
+students1=[
+  {"name": "John", "subject": "Math", "grade": 70},
+ {"name": "Johnson", "subject": "Math", "grade": 50}, 
+ {"name": "Matt", "subject": "Dance", "grade": 90},
+ {"name": "Nick", "subjects": "Literature", "grade": 55}]
+
+# show the failing students
+print("filtering failing students :", failing_student_filter(students))
+print("filtering failing students :", failing_student_filter_lambda(students))
+print("filtering failing students1 :", failing_student_filter_lambda(students1))

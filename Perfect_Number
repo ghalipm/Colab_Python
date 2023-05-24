@@ -1,0 +1,58 @@
+# https://colab.research.google.com/github/alientometal/PythonTraining_Hexavarsity_05_2023/blob/main/Python_introduction_GColab.ipynb
+from pickle import FALSE
+from pickle import TRUE
+# perfect number: for a given integer, if the sum of square of digits is equal to 1, it is perfect, if not it is not perfect
+# precise improved statement: for a given integer, if the sum of square of digits is equal to 1, 
+# it is perfect, if it is equal to square of 2, then not perfect
+
+# square of digits
+def square_of_digits(number):
+  sum=0
+  if number>10:
+    while number>0:
+     digit=int(number%10)
+     #print("if digit = ",digit)
+     sum+=(digit*digit)
+     #print("if sum = ",sum)
+     number/=10
+  else : 
+    digit=number
+    sum+=int(digit*digit)
+    #print("else sum =",sum)
+  return sum
+
+#print("sqaure sum = ",square_of_digits(16))
+
+def is_prefect(number):
+  print("number before loop = ",number)
+  perfect=False
+  if square_of_digits(number)!=1 or square_of_digits(number)!=4 :
+    number=square_of_digits(number)
+  else:
+    if square_of_digits(number)==1 :
+      return True
+    else:
+      return False
+  print("number in loop = ",number)
+
+print("Is perfect = ", is_prefect(17))
+
+# chatGPT improved code:
+def square_of_digits(number):
+    digit_sum = 0
+    while number > 0:
+        digit = number % 10
+        digit_sum += digit * digit
+        number //= 10
+    return digit_sum
+
+def is_perfect(number):
+    print("number before loop =", number)
+    while True:
+        number = square_of_digits(number)
+        if number == 1:
+            return True
+        elif number == 4:
+            return False
+
+print("Is perfect =", is_perfect(17))
